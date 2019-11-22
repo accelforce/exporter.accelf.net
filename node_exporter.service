@@ -1,0 +1,15 @@
+[Unit]
+Description=node_exporter
+After=network.target
+
+[Service]
+Type=simple
+User=prometheus
+WorkingDirectory=/home/prometheus
+ExecStart=/home/prometheus/node_exporter
+PrivateTmp=false
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
