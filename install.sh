@@ -11,7 +11,7 @@ do_install() {
   echo "Create user prometheus"
   sudo useradd -ms /bin/bash prometheus
   echo "Download binary file"
-  curl -fsSL "https://github.com/prometheus/node_exporter/releases/download/v$VERSION/node_exporter-$VERSION.linux-amd64.tar.gz" | sudo tar -xzO "node_exporter-$VERSION.linux-amd64/node_exporter" > /home/prometheus/node_exporter
+  sudo su -c "curl -fsSL https://github.com/prometheus/node_exporter/releases/download/v$VERSION/node_exporter-$VERSION.linux-amd64.tar.gz | tar -xzO node_exporter-$VERSION.linux-amd64/node_exporter > /home/prometheus/node_exporter"
   sudo chmod +x /home/prometheus/node_exporter
   sudo chown prometheus /home/prometheus/node_exporter
   echo "Download systemd config file"
