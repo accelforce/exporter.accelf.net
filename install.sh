@@ -56,6 +56,7 @@ do_install() {
   sudo systemctl start node_exporter
 
   echo "Install completed"
+  sleep 5
   curl -fsSL localhost:9100/metrics | grep -e '^node_exporter_build_info'
 }
 
