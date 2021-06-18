@@ -4,7 +4,7 @@ set -e
 # node_exporter install script
 # curl -fsSL https://exporter.accelf.net/ | sh
 
-VERSION="0.18.1"
+VERSION="1.1.2"
 
 do_install() {
   echo "node_exporter binary install script"
